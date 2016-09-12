@@ -1,0 +1,19 @@
+<div *ngIf="parqueaderos">
+    <br />
+    <a routerLink="/new" class="btn btn-primary">Nuevo Parqueadero</a>
+    <div *ngFor="let parqueadero of parqueaderos">
+        <div class="card">
+            <div class="card-block">
+                <div class="row">
+                    <h1>{{ parqueadero.IdParqueadero }}</h1>
+                    <h2 class="card-title">{{ parqueadero.nombre }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <select [(ngModel)]="IdParqueadero">
+        <option *ngFor="let parqueadero of parqueaderos" [value]="parqueadero.IdParqueadero" class="form-control">{{ parqueadero.nombre }}</option>
+        <option value="2">Dos</option>
+    </select>
+    <h1>{{ IdParqueadero }}</h1>
+</div>
