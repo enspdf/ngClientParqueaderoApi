@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Nuevo Parqueadero</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="Nombre del parqueadero">
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar parqueadero</button>
+    </form>
+</div>

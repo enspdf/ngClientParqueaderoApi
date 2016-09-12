@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from './components/Index/index.component';
 import { ParqueaderoComponent } from './components/Parqueadero/parqueadero.component';
+import { NewParqueaderoComponent } from './components/Parqueadero/newparqueadero.component';
 import { BahiaComponent } from './components/Bahia/bahia.component';
 
 const routes : Routes = [
@@ -15,6 +16,14 @@ const routes : Routes = [
     {
         path: 'bahias',
         component: BahiaComponent
+    },
+    {
+        path: 'parqueaderos/new',
+        component: NewParqueaderoComponent
+    },
+    {
+        path: 'parqueaderos/delete/:id',
+        component: ParqueaderoComponent
     }
 ];
 

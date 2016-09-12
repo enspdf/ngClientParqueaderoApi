@@ -1,7 +1,7 @@
 <div *ngIf="parqueaderos">
-    <br />
-    <a routerLink="/new" class="btn btn-primary">Nuevo Parqueadero</a>
-    <div *ngFor="let parqueadero of parqueaderos">
+    <hr>
+    <a routerLink="/parqueaderos/new" class="btn btn-primary">Nuevo Parqueadero</a>
+    <!-- <div *ngFor="let parqueadero of parqueaderos">
         <div class="card">
             <div class="card-block">
                 <div class="row">
@@ -15,5 +15,23 @@
         <option *ngFor="let parqueadero of parqueaderos" [value]="parqueadero.IdParqueadero" class="form-control">{{ parqueadero.nombre }}</option>
         <option value="2">Dos</option>
     </select>
-    <h1>{{ IdParqueadero }}</h1>
+    <h1>{{ IdParqueadero }}</h1> -->
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id Parqueadero</th>
+                <th>Nombre</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let parqueadero of parqueaderos">
+            <tr>
+                <th>{{ parqueadero.IdParqueadero }}</th>
+                <th>{{ parqueadero.nombre }}</th>               
+                <th><button [(ngModel)]="{{ parqueadero.IdParqueadero }}" class="btn btn-danger">Eliminar</button></th>
+            </tr>
+        </tbody>
+    </table>
 </div>

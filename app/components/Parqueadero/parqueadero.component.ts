@@ -9,6 +9,7 @@ import { Parqueadero } from '../../Interfaces/Parqueadero.interface';
     providers: [ParqueaderoService]
 })
 export class ParqueaderoComponent implements OnInit {
+    IdParqueadero : number;
     parqueaderos : Parqueadero[];
 
     constructor(private _parqueaderoService : ParqueaderoService) {
@@ -20,5 +21,9 @@ export class ParqueaderoComponent implements OnInit {
             .subscribe(data => {
                 this.parqueaderos = data;
             })
+    }
+
+    deleteParqueadero() {
+        this._parqueaderoService.deleteParqueadero(this.IdParqueadero);
     }
 }
