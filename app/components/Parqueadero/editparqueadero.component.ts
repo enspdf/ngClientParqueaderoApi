@@ -2,18 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ParqueaderoService } from '../../services/Parqueadero.service';
 import { Parqueadero } from '../../Interfaces/Parqueadero.interface';
+import { ParqueaderoComponent } from './parqueadero.component';
 
 @Component({
     moduleId: module.id,
     selector: 'parqueadero',
     templateUrl: 'editparqueadero.component.html',
-    providers: [ParqueaderoService]
+    providers: [ParqueaderoService, ParqueaderoComponent]
 })
 export class EditParqueaderoComponent implements OnInit {
     id: number;
     parqueadero : Parqueadero;
 
-    constructor(private _parqueaderoService : ParqueaderoService, private _route : ActivatedRoute, private _router : Router) {
+    constructor(private parqueaderoComponent : ParqueaderoComponent, private _parqueaderoService : ParqueaderoService, private _route : ActivatedRoute, private _router : Router) {
 
     }
 
@@ -31,12 +32,12 @@ export class EditParqueaderoComponent implements OnInit {
     onSubmit() {
         this._parqueaderoService.updateParqueadero(this.parqueadero.IdParqueadero, this.parqueadero.nombre)
             .subscribe(data => {
-                this.parqueadero = data;
             })
         this.redirect();
     }
 
     redirect() {
-        this._router.navigate(['/parqueaderos']);
+        this.parqueaderoComponent.ngOnInit();
+        this._router.navigate(['/parqueaderos']);        
     }
 }

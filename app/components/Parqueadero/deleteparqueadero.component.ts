@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ParqueaderoService } from '../../services/Parqueadero.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ParqueaderoComponent } from './parqueadero.component';
 
 @Component({
     moduleId: module.id,
     selector: 'parqueadero',
     template: '',
-    providers: [ParqueaderoService]
+    providers: [ParqueaderoService, ParqueaderoComponent]
 })
 export class DeleteParqueaderoComponent implements OnInit {
     id : number;
     result : string;
 
-    constructor (private _parqueaderoService : ParqueaderoService, private _route : ActivatedRoute, private _router : Router) {
+    constructor (private parqueaderoComponent : ParqueaderoComponent, private _parqueaderoService : ParqueaderoService, private _route : ActivatedRoute, private _router : Router) {
 
     } 
     
@@ -29,6 +30,7 @@ export class DeleteParqueaderoComponent implements OnInit {
     }
 
     redirect() {
+        this.parqueaderoComponent.ngOnInit();
         this._router.navigate(['/parqueaderos']);
     }
 }
