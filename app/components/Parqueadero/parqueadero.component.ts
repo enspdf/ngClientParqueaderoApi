@@ -22,8 +22,4 @@ export class ParqueaderoComponent implements OnInit {
                 this.parqueaderos = data;
             })
     }
-
-    deleteParqueadero() {
-        this._parqueaderoService.deleteParqueadero(this.IdParqueadero);
-    }
 }
