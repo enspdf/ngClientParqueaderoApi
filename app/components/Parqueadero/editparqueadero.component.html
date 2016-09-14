@@ -1,0 +1,10 @@
+<div class="container" *ngIf="parqueadero">
+    <h1>Editar parqueadero: <h3>{{ parqueadero.nombre }}</h3></h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="parqueadero.nombre" placeholder="Nombre del parqueadero">
+        </div>
+        <input type="hidden" name="IdParqueadero" [(ngModel)]="parqueadero.IdParqueadero">
+        <button type="submit" class="btn btn-primary">Editar parqueadero</button>
+    </form>
+</div>

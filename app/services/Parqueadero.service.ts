@@ -15,6 +15,11 @@ export class ParqueaderoService {
             .map(res => res.json());
     }
 
+    getParqueaderoById(IdParqueadero : number) {
+        return this._http.get(this._parqueaderoUrl + IdParqueadero)
+            .map(res => res.json());
+    }
+
     saveParqueadero(nombre : string) {
         let body = JSON.stringify({"nombre" : nombre});
         let headers = new Headers({'Content-Type' : 'application/json'});
@@ -29,8 +34,7 @@ export class ParqueaderoService {
         let headers = new Headers({'Content-Type' : 'application/json'});
         let options = new RequestOptions({headers: headers, method: "PUT"});
 
-        return this._http.put(this._parqueaderoUrl + IdParqueadero, body, options)
-            .map(res => res.json());
+        return this._http.put(this._parqueaderoUrl + IdParqueadero, body, options);
     }
 
     deleteParqueadero(IdParqueadero : number) {

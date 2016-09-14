@@ -18,7 +18,25 @@ export class EditParqueaderoComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._router
+        this._route.params
+            .map(params => params['id'])
+            .subscribe((id) => {
+                this._parqueaderoService.getParqueaderoById(id)
+                    .subscribe(result => {
+                        this.parqueadero = result;
+                    })
+            })
     }
 
+    onSubmit() {
+        this._parqueaderoService.updateParqueadero(this.parqueadero.IdParqueadero, this.parqueadero.nombre)
+            .subscribe(data => {
+                this.parqueadero = data;
+            })
+        this.redirect();
+    }
+
+    redirect() {
+        this._router.navigate(['/parqueaderos']);
+    }
 }

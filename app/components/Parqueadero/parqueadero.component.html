@@ -15,7 +15,7 @@
             <tr>
                 <th>{{ parqueadero.IdParqueadero }}</th>
                 <th>{{ parqueadero.nombre }}</th>               
-                <th><a href="#" class="btn btn-info">Actualizar</a></th>
+                <th><a routerLink="/parqueaderos/edit/{{ parqueadero.IdParqueadero }}" class="btn btn-info">Actualizar</a></th>
                 <th><a routerLink="/parqueaderos/delete/{{ parqueadero.IdParqueadero }}" class="btn btn-danger">Eliminar</a></th>
             </tr>
         </tbody>

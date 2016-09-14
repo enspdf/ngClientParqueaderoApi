@@ -3,6 +3,7 @@ import { IndexComponent } from './components/Index/index.component';
 import { ParqueaderoComponent } from './components/Parqueadero/parqueadero.component';
 import { NewParqueaderoComponent } from './components/Parqueadero/newparqueadero.component';
 import { DeleteParqueaderoComponent } from './components/Parqueadero/deleteparqueadero.component';
+import { EditParqueaderoComponent } from './components/Parqueadero/editparqueadero.component';
 import { BahiaComponent } from './components/Bahia/bahia.component';
 
 const routes : Routes = [
@@ -25,6 +26,10 @@ const routes : Routes = [
     {
         path: 'parqueaderos/delete/:id',
         component: DeleteParqueaderoComponent
+    },
+    {
+        path: 'parqueaderos/edit/:id',
+        component: EditParqueaderoComponent
     }
 ];
 
