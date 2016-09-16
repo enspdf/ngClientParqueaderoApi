@@ -28,5 +28,6 @@ export class NewParqueaderoComponent {
     redirect() {
         this.parqueaderoComponent.ngOnInit();
         this._router.navigate(['/parqueaderos']);
+        this.parqueaderoComponent.successParking(this.nombre);
     }
 }

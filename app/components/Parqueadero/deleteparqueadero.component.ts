@@ -32,5 +32,6 @@ export class DeleteParqueaderoComponent implements OnInit {
     redirect() {
         this.parqueaderoComponent.ngOnInit();
         this._router.navigate(['/parqueaderos']);
+        this.parqueaderoComponent.successDelete();
     }
 }

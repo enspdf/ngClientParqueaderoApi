@@ -6,19 +6,21 @@ import { Bahia } from '../../Interfaces/Bahia.interface';
     moduleId: module.id,
     selector: 'bahia',
     templateUrl: 'bahia.component.html',
-    providers: [BahiaService]
+    providers: [ BahiaService ]
 })
 export class BahiaComponent implements OnInit {
+
     bahias : Bahia[];
 
-    constructor(private _bahiaService : BahiaService) {
+    constructor(private _bahiService : BahiaService) {
 
     }
 
     ngOnInit() {
-        this._bahiaService.getBahias()
+        this._bahiService.getBahias()
             .subscribe(data => {
-                this.bahias = data;
+                this.bahias = data; 
             })
     }
+
 }

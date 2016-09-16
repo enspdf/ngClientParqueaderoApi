@@ -38,6 +38,7 @@ export class EditParqueaderoComponent implements OnInit {
 
     redirect() {
         this.parqueaderoComponent.ngOnInit();
-        this._router.navigate(['/parqueaderos']);        
+        this._router.navigate(['/parqueaderos']);  
+        this.parqueaderoComponent.successUpdate(this.parqueadero.nombre);      
     }
 }

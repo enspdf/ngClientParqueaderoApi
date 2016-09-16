@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class BahiaService {
-    private _bahiaUrl : string = 'http://shackox.apphb.com/api/Bahias/';
+    private _bahiaUrl :string = "http://shackox.apphb.com/api/Bahias/";
 
     constructor(private _http : Http) {
 
@@ -13,6 +13,11 @@ export class BahiaService {
     getBahias() {
         return this._http.get(this._bahiaUrl)
             .map(res => res.json());
+    }
+
+    getBahiaById(IdBahia : number) {
+        return this._http.get(this._bahiaUrl + IdBahia)
+            .map(res => res.json())
     }
 
     saveBahia(idParqueadero : number, Disponible : string) {
@@ -29,8 +34,7 @@ export class BahiaService {
         let headers = new Headers({'Content-Type' : 'application/json'});
         let options = new RequestOptions({headers: headers, method: "PUT"});
 
-        return this._http.put(this._bahiaUrl + IdBahia, body, options)
-            .map(res => res.json());
+        return this._http.put(this._bahiaUrl + IdBahia, body, options);
     }
 
     deleteBahia(IdBahia : number) {
