@@ -4,6 +4,8 @@ import { ParqueaderoService } from '../../services/Parqueadero.service';
 import { Parqueadero } from '../../Interfaces/Parqueadero.interface';
 import { ParqueaderoComponent } from './parqueadero.component';
 
+declare var swal: any;
+
 @Component({
     moduleId: module.id,
     selector: 'parqueadero',
@@ -32,13 +34,16 @@ export class EditParqueaderoComponent implements OnInit {
     onSubmit() {
         this._parqueaderoService.updateParqueadero(this.parqueadero.IdParqueadero, this.parqueadero.nombre)
             .subscribe(data => {
+                this.redirect();
+                this.successUpdate(this.parqueadero.nombre);
             })
-        this.redirect();
     }
 
     redirect() {
-        this.parqueaderoComponent.ngOnInit();
-        this._router.navigate(['/parqueaderos']);  
-        this.parqueaderoComponent.successUpdate(this.parqueadero.nombre);      
+        this._router.navigate(['/parqueaderos']);        
+    }
+
+    successUpdate(name : string) {
+        swal("Actualizado", "El parqueadero " + name + " se ha eliminado correctamente", "success");
     }
 }

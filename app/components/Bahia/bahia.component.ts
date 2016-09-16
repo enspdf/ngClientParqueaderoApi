@@ -20,6 +20,7 @@ export class BahiaComponent implements OnInit {
         this._bahiService.getBahias()
             .subscribe(data => {
                 this.bahias = data; 
+                console.log(this.bahias);
             })
     }
 

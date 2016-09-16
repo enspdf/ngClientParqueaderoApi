@@ -21,12 +21,11 @@ export class NewParqueaderoComponent {
         this._parqueaderoService.saveParqueadero(this.nombre)
             .subscribe(result => {
                 this.result = result;
+                this.redirect();
             });
-        this.redirect();
     }
 
     redirect() {
-        this.parqueaderoComponent.ngOnInit();
         this._router.navigate(['/parqueaderos']);
         this.parqueaderoComponent.successParking(this.nombre);
     }

@@ -33,7 +33,5 @@ export class ParqueaderoComponent implements OnInit {
         swal("Eliminado", "El parqueadero se ha eliminado correctamente", "success");
     }
 
-    successUpdate(name : string) {
-        swal("Actualizado", "El parqueadero " + name + " se ha eliminado correctamente", "success");
-    }
+    
 }
