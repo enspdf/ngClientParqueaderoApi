@@ -8,6 +8,10 @@ import { BahiaComponent } from './components/Bahia/index.component';
 import { NewBahiaComponent } from './components/Bahia/new.component';
 import { EditBahiaComponent } from './components/Bahia/edit.component';
 import { DeleteBahiaComponent } from './components/Bahia/delete.component';
+import { PersonaComponent } from './components/Cliente/index.component';
+import { NewClienteComponent } from './components/Cliente/new.component';
+import { DeleteClienteComponent } from './components/Cliente/delete.component';
+import { EditClienteComponent } from './components/Cliente/edit.component';
 
 const routes : Routes = [
     {
@@ -54,6 +58,27 @@ const routes : Routes = [
                 path: 'edit/:id',
                 component: EditBahiaComponent
             },
+        ]
+    },
+    {
+        path: 'clientes',
+        children: [
+            {
+                path: '',
+                component: PersonaComponent
+            },
+            {
+                path: 'new',
+                component: NewClienteComponent
+            },
+            {
+                path: 'delete/:id',
+                component: DeleteClienteComponent
+            },
+            {
+                path: 'edit/:id',
+                component: EditClienteComponent
+            }
         ]
     },
 ];

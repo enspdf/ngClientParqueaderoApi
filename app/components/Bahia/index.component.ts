@@ -12,12 +12,12 @@ export class BahiaComponent implements OnInit {
 
     bahias : Bahia[];
 
-    constructor(private _bahiService : BahiaService) {
+    constructor(private _bahiaService : BahiaService) {
 
     }
 
     ngOnInit() {
-        this._bahiService.getBahias()
+        this._bahiaService.getBahias()
             .subscribe(data => {
                 this.bahias = data; 
             })

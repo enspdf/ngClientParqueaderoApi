@@ -1,0 +1,13 @@
+<div class="container" *ngIf="persona">
+    <h1>Editar: {{ persona.nombres }}  {{ persona.apellidos }}</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="persona.nombres" placeholder="Ingresa tu nombre completo">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="apellidos" [(ngModel)]="persona.apellidos" placeholder="Ingresa tus apellidos">
+        </div>
+        <input type="hidden" name="idPersona" [(ngModel)]="persona.idPersona">
+        <button type="submit" class="btn btn-primary">Editar cliente</button>
+    </form>
+</div>

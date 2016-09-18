@@ -12,6 +12,10 @@ import { BahiaComponent } from '../app/components/Bahia/index.component';
 import { DeleteBahiaComponent } from '../app/components/Bahia/delete.component';
 import { NewBahiaComponent } from '../app/components/Bahia/new.component';
 import { EditBahiaComponent } from '../app/components/Bahia/edit.component';
+import { PersonaComponent } from '../app/components/Cliente/index.component';
+import { NewClienteComponent } from '../app/components/Cliente/new.component';
+import { DeleteClienteComponent } from '../app/components/Cliente/delete.component';
+import { EditClienteComponent } from '../app/components/Cliente/edit.component';
 import { routing, appRouterProviders } from './app.routes';
 
 @NgModule({
@@ -20,7 +24,9 @@ import { routing, appRouterProviders } from './app.routes';
                   IndexComponent, BahiaComponent, 
                   NewParqueaderoComponent, DeleteParqueaderoComponent,
                   EditParqueaderoComponent, NewBahiaComponent,
-                  DeleteBahiaComponent, EditBahiaComponent ],
+                  DeleteBahiaComponent, EditBahiaComponent,
+                  PersonaComponent, NewClienteComponent,
+                  DeleteClienteComponent, EditClienteComponent ],
   providers: [appRouterProviders],
   bootstrap: [ AppComponent ]
 })

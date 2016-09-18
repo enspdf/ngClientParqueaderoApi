@@ -37,9 +37,9 @@ export class NewBahiaComponent implements OnInit {
             this.validatorMessage();
         } else {
             this._bahiaService.saveBahia(this.idParqueadero, this.Disponible)
-            .subscribe(result => {
-                this.result = result;
-                this.redirect();
+                .subscribe(result => {
+                    this.result = result;
+                    this.redirect();
             })
         }
     }
