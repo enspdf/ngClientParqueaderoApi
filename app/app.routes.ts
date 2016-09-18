@@ -1,10 +1,13 @@
 import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from './components/Index/index.component';
-import { ParqueaderoComponent } from './components/Parqueadero/parqueadero.component';
-import { NewParqueaderoComponent } from './components/Parqueadero/newparqueadero.component';
-import { DeleteParqueaderoComponent } from './components/Parqueadero/deleteparqueadero.component';
-import { EditParqueaderoComponent } from './components/Parqueadero/editparqueadero.component';
-import { BahiaComponent } from './components/Bahia/bahia.component';
+import { ParqueaderoComponent } from './components/Parqueadero/index.component';
+import { NewParqueaderoComponent } from './components/Parqueadero/new.component';
+import { DeleteParqueaderoComponent } from './components/Parqueadero/delete.component';
+import { EditParqueaderoComponent } from './components/Parqueadero/edit.component';
+import { BahiaComponent } from './components/Bahia/index.component';
+import { NewBahiaComponent } from './components/Bahia/new.component';
+import { EditBahiaComponent } from './components/Bahia/edit.component';
+import { DeleteBahiaComponent } from './components/Bahia/delete.component';
 
 const routes : Routes = [
     {
@@ -13,24 +16,46 @@ const routes : Routes = [
     },
     {
         path: 'parqueaderos',
-        component: ParqueaderoComponent
-    },
+        children: [
+            {
+                path: '',
+                component: ParqueaderoComponent
+            },
+            {
+                path: 'new',
+                component: NewParqueaderoComponent
+            },  
+            {
+            path: 'delete/:id',
+                component: DeleteParqueaderoComponent
+            },
+            {
+                path: 'edit/:id',
+                component: EditParqueaderoComponent
+            },
+        ]
+    },    
     {
         path: 'bahias',
-        component: BahiaComponent
+        children: [
+            {
+                path: '',
+                component: BahiaComponent
+            },
+            {
+                path: 'new',
+                component: NewBahiaComponent
+            },
+            {
+                path: 'delete/:id',
+                component: DeleteBahiaComponent
+            },
+            {
+                path: 'edit/:id',
+                component: EditBahiaComponent
+            },
+        ]
     },
-    {
-        path: 'parqueaderos/new',
-        component: NewParqueaderoComponent
-    },
-    {
-        path: 'parqueaderos/delete/:id',
-        component: DeleteParqueaderoComponent
-    },
-    {
-        path: 'parqueaderos/edit/:id',
-        component: EditParqueaderoComponent
-    }
 ];
 
 export const appRouterProviders : any[] = [

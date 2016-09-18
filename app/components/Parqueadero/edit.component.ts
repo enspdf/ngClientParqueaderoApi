@@ -2,21 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ParqueaderoService } from '../../services/Parqueadero.service';
 import { Parqueadero } from '../../Interfaces/Parqueadero.interface';
-import { ParqueaderoComponent } from './parqueadero.component';
 
 declare var swal: any;
 
 @Component({
     moduleId: module.id,
     selector: 'parqueadero',
-    templateUrl: 'editparqueadero.component.html',
-    providers: [ParqueaderoService, ParqueaderoComponent]
+    templateUrl: 'edit.component.html',
+    providers: [ParqueaderoService]
 })
 export class EditParqueaderoComponent implements OnInit {
     id: number;
     parqueadero : Parqueadero;
 
-    constructor(private parqueaderoComponent : ParqueaderoComponent, private _parqueaderoService : ParqueaderoService, private _route : ActivatedRoute, private _router : Router) {
+    constructor(private _parqueaderoService : ParqueaderoService, private _route : ActivatedRoute, private _router : Router) {
 
     }
 
@@ -44,6 +43,6 @@ export class EditParqueaderoComponent implements OnInit {
     }
 
     successUpdate(name : string) {
-        swal("Actualizado", "El parqueadero " + name + " se ha eliminado correctamente", "success");
+        swal("Actualizado", "El parqueadero " + name + " se ha actualizado correctamente", "success");
     }
 }

@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ParqueaderoService } from '../../services/Parqueadero.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ParqueaderoComponent } from './parqueadero.component';
+
+declare var swal: any;
 
 @Component({
     moduleId: module.id,
     selector: 'parqueadero',
     template: '',
-    providers: [ParqueaderoService, ParqueaderoComponent]
+    providers: [ParqueaderoService]
 })
 export class DeleteParqueaderoComponent implements OnInit {
     id : number;
     result : string;
 
-    constructor (private parqueaderoComponent : ParqueaderoComponent, private _parqueaderoService : ParqueaderoService, private _route : ActivatedRoute, private _router : Router) {
+    constructor (private _parqueaderoService : ParqueaderoService, private _route : ActivatedRoute, private _router : Router) {
 
     } 
     
@@ -24,13 +25,17 @@ export class DeleteParqueaderoComponent implements OnInit {
                 this._parqueaderoService.deleteParqueadero(id)
                     .subscribe(result => {
                         this.result = result;
+                        this.redirect();
                     })
-                this.redirect();
             })
     }
 
     redirect() {
         this._router.navigate(['/parqueaderos']);
-        this.parqueaderoComponent.successDelete();
+        this.successDelete();
+    }
+
+    successDelete() {
+        swal("Eliminado", "El parqueadero se ha eliminado correctamente", "success");
     }
 }

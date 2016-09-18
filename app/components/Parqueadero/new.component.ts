@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ParqueaderoService } from '../../services/Parqueadero.service';
-import { ParqueaderoComponent } from './parqueadero.component';
+
+declare var swal: any;
 
 @Component({
     moduleId: module.id,
     selector: 'newparqueadero',
-    templateUrl: 'newparqueadero.component.html',
-    providers: [ParqueaderoService, ParqueaderoComponent]
+    templateUrl: 'new.component.html',
+    providers: [ParqueaderoService]
 })
 export class NewParqueaderoComponent {
     nombre : string;
     result : string;
 
-    constructor(private parqueaderoComponent : ParqueaderoComponent, private _parqueaderoService : ParqueaderoService, private _router : Router) {
+    constructor(private _parqueaderoService : ParqueaderoService, private _router : Router) {
 
     }
 
@@ -27,6 +28,10 @@ export class NewParqueaderoComponent {
 
     redirect() {
         this._router.navigate(['/parqueaderos']);
-        this.parqueaderoComponent.successParking(this.nombre);
+        this.successParking(this.nombre);
+    }
+
+    successParking(name : string) {
+        swal("Creado", "El parqueadero " + name + " se ha guardado correctamente", "success");
     }
 }

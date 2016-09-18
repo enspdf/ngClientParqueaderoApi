@@ -5,7 +5,7 @@ import { Bahia } from '../../Interfaces/Bahia.interface';
 @Component({
     moduleId: module.id,
     selector: 'bahia',
-    templateUrl: 'bahia.component.html',
+    templateUrl: 'index.component.html',
     providers: [ BahiaService ]
 })
 export class BahiaComponent implements OnInit {
@@ -20,7 +20,6 @@ export class BahiaComponent implements OnInit {
         this._bahiService.getBahias()
             .subscribe(data => {
                 this.bahias = data; 
-                console.log(this.bahias);
             })
     }
 
