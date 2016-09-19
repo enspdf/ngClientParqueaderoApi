@@ -1,0 +1,16 @@
+<div *ngIf="tipoVehiculos">
+    <div class="container">
+        <h1>Nueva tarifa</h1>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <select name="tipos" class="form-control" [(ngModel)]="idTipo">
+                    <option *ngFor="let tipo of tipoVehiculos" [value]="tipo.idTipo">{{ tipo.clase }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="costo" [(ngModel)]="costo" placeholder="Ingrese el costo">
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar tarifa</button>
+        </form>
+    </div>
+</div>

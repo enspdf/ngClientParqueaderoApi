@@ -16,6 +16,9 @@ import { TipoVehiculoComponent } from './components/TipoVehiculo/index.component
 import { NewTipoVehiculoComponent } from './components/TipoVehiculo/new.component';
 import { DeleteTipoVehiculoComponent } from './components/TipoVehiculo/delete.component';
 import { EditTipoVehiculoComponent } from './components/TipoVehiculo/edit.component';
+import { TarifaComponent } from './components/Tarifa/index.component';
+import { NewTarifaService } from './components/Tarifa/new.component';
+import { DeleteTarifaComponent } from './components/Tarifa/delete.component';
 
 const routes : Routes = [
     {
@@ -103,6 +106,23 @@ const routes : Routes = [
             {
                 path: 'edit/:id',
                 component: EditTipoVehiculoComponent
+            }
+        ]
+    },
+    {
+        path: 'tarifas',
+        children: [
+            {
+                path: '',
+                component: TarifaComponent
+            },
+            {
+                path: 'new',
+                component: NewTarifaService
+            },
+            {
+                path: 'delete/:id',
+                component: DeleteTarifaComponent
             }
         ]
     }
