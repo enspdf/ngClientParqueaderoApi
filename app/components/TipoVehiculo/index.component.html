@@ -1,0 +1,23 @@
+<div *ngIf="tipoVehiculos">
+    <hr>
+    <a routerLink="/tipos/new" class="btn btn-primary">Nueva tipo de vehiculo</a>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id Tipo</th>
+                <th>Clase</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let tipo of tipoVehiculos">
+            <tr>
+                <th>{{ tipo.idTipo }}</th>
+                <th>{{ tipo.clase }}</th>
+                <th><a routerLink="/tipos/edit/{{ tipo.idTipo }}" class="btn btn-info">Actualizar</a></th>
+                <th><a routerLink="/tipos/delete/{{ tipo.idTipo }}" class="btn btn-danger">Eliminar</a></th>
+            </tr>
+        </tbody>
+    </table>
+</div>

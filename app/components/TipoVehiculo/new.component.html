@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Nuevo tipo de vehiculo</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" class="form-control" name="clase" [(ngModel)]="clase" placeholder="Clase de vehiculo">
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar tipo</button>
+    </form>
+</div>

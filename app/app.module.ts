@@ -16,6 +16,10 @@ import { PersonaComponent } from '../app/components/Cliente/index.component';
 import { NewClienteComponent } from '../app/components/Cliente/new.component';
 import { DeleteClienteComponent } from '../app/components/Cliente/delete.component';
 import { EditClienteComponent } from '../app/components/Cliente/edit.component';
+import { TipoVehiculoComponent } from '../app/components/TipoVehiculo/index.component';
+import { NewTipoVehiculoComponent } from '../app/components/TipoVehiculo/new.component';
+import { DeleteTipoVehiculoComponent } from '../app/components/TipoVehiculo/delete.component';
+import { EditTipoVehiculoComponent } from '../app/components/TipoVehiculo/edit.component';
 import { routing, appRouterProviders } from './app.routes';
 
 @NgModule({
@@ -26,7 +30,9 @@ import { routing, appRouterProviders } from './app.routes';
                   EditParqueaderoComponent, NewBahiaComponent,
                   DeleteBahiaComponent, EditBahiaComponent,
                   PersonaComponent, NewClienteComponent,
-                  DeleteClienteComponent, EditClienteComponent ],
+                  DeleteClienteComponent, EditClienteComponent,
+                  TipoVehiculoComponent, NewTipoVehiculoComponent,
+                  DeleteTipoVehiculoComponent, EditTipoVehiculoComponent ],
   providers: [appRouterProviders],
   bootstrap: [ AppComponent ]
 })

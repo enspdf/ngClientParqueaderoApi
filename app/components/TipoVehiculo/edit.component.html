@@ -1,0 +1,10 @@
+<div class="container" *ngIf="tipoVehiculo">
+    <h1>Editar {{ tipoVehiculo.clase }}</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" class="form-control" name="clase" [(ngModel)]="tipoVehiculo.clase" placeholder="Ingrese el tipo de vehiculo">
+        </div>
+        <input type="hidden" name="idTipo" [(ngModel)]="tipoVehiculo.idTipo">
+        <button type="submit" class="btn btn-primary">Editar tipo de vehiculo</button>
+    </form>
+</div>

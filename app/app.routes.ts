@@ -12,6 +12,10 @@ import { PersonaComponent } from './components/Cliente/index.component';
 import { NewClienteComponent } from './components/Cliente/new.component';
 import { DeleteClienteComponent } from './components/Cliente/delete.component';
 import { EditClienteComponent } from './components/Cliente/edit.component';
+import { TipoVehiculoComponent } from './components/TipoVehiculo/index.component'
+import { NewTipoVehiculoComponent } from './components/TipoVehiculo/new.component';
+import { DeleteTipoVehiculoComponent } from './components/TipoVehiculo/delete.component';
+import { EditTipoVehiculoComponent } from './components/TipoVehiculo/edit.component';
 
 const routes : Routes = [
     {
@@ -36,7 +40,7 @@ const routes : Routes = [
             {
                 path: 'edit/:id',
                 component: EditParqueaderoComponent
-            },
+            }
         ]
     },    
     {
@@ -81,6 +85,27 @@ const routes : Routes = [
             }
         ]
     },
+    {
+        path: 'tipos',
+        children: [
+            {
+                path: '',
+                component: TipoVehiculoComponent
+            },
+            {
+                path: 'new',
+                component: NewTipoVehiculoComponent
+            },
+            {
+                path: 'delete/:id',
+                component: DeleteTipoVehiculoComponent
+            },
+            {
+                path: 'edit/:id',
+                component: EditTipoVehiculoComponent
+            }
+        ]
+    }
 ];
 
 export const appRouterProviders : any[] = [
