@@ -19,6 +19,7 @@ import { EditTipoVehiculoComponent } from './components/TipoVehiculo/edit.compon
 import { TarifaComponent } from './components/Tarifa/index.component';
 import { NewTarifaService } from './components/Tarifa/new.component';
 import { DeleteTarifaComponent } from './components/Tarifa/delete.component';
+import { EditTarifaComponent } from './components/Tarifa/edit.component';
 
 const routes : Routes = [
     {
@@ -123,6 +124,10 @@ const routes : Routes = [
             {
                 path: 'delete/:id',
                 component: DeleteTarifaComponent
+            },
+            {
+                path: 'edit/:id',
+                component: EditTarifaComponent
             }
         ]
     }
