@@ -1,0 +1,27 @@
+<div *ngIf="vehiculos">
+    <hr>
+    <a routerLink="/vehiculos/new" class="btn btn-primary">Nuevo Vehiculo</a>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id Vehiculo</th>
+                <th>Marca</th>
+                <th>Propietario</th>
+                <th>Tipo de vehiculo</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let vehiculo of vehiculos">
+            <tr>
+                <th>{{ vehiculo.idVehiculo }}</th>
+                <th>{{ vehiculo.Marca }}</th>
+                <th>{{ vehiculo.Persona.nombres }} {{ vehiculo.Persona.apellidos }}</th>
+                <th>{{ vehiculo.TipoVehiculo.clase }}</th>
+                <th><a routerLink="/vehiculos/edit/{{ vehiculo.idVehiculo }}" class="btn btn-info">Actualizar</a></th>
+                <th><a routerLink="/vehiculos/delete/{{ vehiculo.idVehiculo }}" class="btn btn-danger">Eliminar</a></th>
+            </tr>
+        </tbody>
+    </table>
+</div>

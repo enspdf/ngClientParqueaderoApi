@@ -20,6 +20,10 @@ import { TarifaComponent } from './components/Tarifa/index.component';
 import { NewTarifaService } from './components/Tarifa/new.component';
 import { DeleteTarifaComponent } from './components/Tarifa/delete.component';
 import { EditTarifaComponent } from './components/Tarifa/edit.component';
+import { VehiculoComponent } from './components/Vehiculo/index.component';
+import { NewVehiculoComponent } from './components/Vehiculo/new.component';
+import { DeleteVehiculoComponent } from './components/Vehiculo/delete.component';
+import { EditVehiculoComponent } from './components/Vehiculo/edit.component';
 
 const routes : Routes = [
     {
@@ -128,6 +132,27 @@ const routes : Routes = [
             {
                 path: 'edit/:id',
                 component: EditTarifaComponent
+            }
+        ]
+    },
+    {
+        path: 'vehiculos',
+        children: [
+            {
+                path: '',
+                component: VehiculoComponent
+            },
+            {
+                path: 'new',
+                component: NewVehiculoComponent
+            },
+            {
+                path: 'delete/:id',
+                component: DeleteVehiculoComponent
+            },
+            {
+                path: 'edit/:id',
+                component: EditVehiculoComponent
             }
         ]
     }

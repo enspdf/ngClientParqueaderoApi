@@ -24,6 +24,10 @@ import { TarifaComponent } from '../app/components/Tarifa/index.component';
 import { NewTarifaService } from '../app/components/Tarifa/new.component';
 import { DeleteTarifaComponent } from '../app/components/Tarifa/delete.component';
 import { EditTarifaComponent } from '../app/components/Tarifa/edit.component';
+import { VehiculoComponent } from '../app/components/Vehiculo/index.component';
+import { NewVehiculoComponent } from '../app/components/Vehiculo/new.component';
+import { DeleteVehiculoComponent } from '../app/components/Vehiculo/delete.component';
+import { EditVehiculoComponent } from '../app/components/Vehiculo/edit.component';
 import { routing, appRouterProviders } from './app.routes';
 
 @NgModule({
@@ -38,7 +42,9 @@ import { routing, appRouterProviders } from './app.routes';
                   TipoVehiculoComponent, NewTipoVehiculoComponent,
                   DeleteTipoVehiculoComponent, EditTipoVehiculoComponent,
                   TarifaComponent, NewTarifaService,
-                  DeleteTarifaComponent, EditTarifaComponent ],
+                  DeleteTarifaComponent, EditTarifaComponent,
+                  VehiculoComponent, NewVehiculoComponent,
+                  DeleteVehiculoComponent, EditVehiculoComponent ],
   providers: [appRouterProviders],
   bootstrap: [ AppComponent ]
 })

@@ -1,0 +1,21 @@
+<div *ngIf="clientes">
+    <div class="container">
+        <h1>Registrar vehiculo</h1>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <input type="text" class="form-control" name="marca" [(ngModel)]="Marca" placeholder="Escribe la marca de tu vehiculo">
+            </div>
+            <div class="form-group">
+                <select name="propietario" class="form-control" [(ngModel)]="IdPersona">
+                    <option *ngFor="let cliente of clientes" [value]="cliente.idPersona">{{ cliente.nombres }} {{ cliente.apellidos }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select name="tipovehiculo" class="form-control" [(ngModel)]="idTipo">
+                    <option *ngFor="let tipo of tipoVehiculos" [value]="tipo.idTipo">{{ tipo.clase }}</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar vehiculo</button>
+        </form>
+    </div>
+</div>
