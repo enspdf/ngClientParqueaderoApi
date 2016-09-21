@@ -25,6 +25,8 @@ import { NewVehiculoComponent } from './components/Vehiculo/new.component';
 import { DeleteVehiculoComponent } from './components/Vehiculo/delete.component';
 import { EditVehiculoComponent } from './components/Vehiculo/edit.component';
 import { PagoComponent } from './components/Pago/index.component';
+import { NewPagoComponent } from './components/Pago/new.component';
+import { DeletePagoComponent } from './components/Pago/delete.component';
 
 const routes : Routes = [
     {
@@ -163,6 +165,14 @@ const routes : Routes = [
             {
                 path: '',
                 component: PagoComponent
+            },
+            {
+                path: 'new',
+                component: NewPagoComponent
+            },
+            {
+                path: 'delete/:id',
+                component: DeletePagoComponent
             }
         ]
     }

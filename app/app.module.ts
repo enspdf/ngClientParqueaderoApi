@@ -29,6 +29,8 @@ import { NewVehiculoComponent } from '../app/components/Vehiculo/new.component';
 import { DeleteVehiculoComponent } from '../app/components/Vehiculo/delete.component';
 import { EditVehiculoComponent } from '../app/components/Vehiculo/edit.component';
 import { PagoComponent } from '../app/components/Pago/index.component';
+import { NewPagoComponent } from '../app/components/Pago/new.component';
+import { DeletePagoComponent } from '../app/components/Pago/delete.component';
 import { routing, appRouterProviders } from './app.routes';
 
 @NgModule({
@@ -46,7 +48,8 @@ import { routing, appRouterProviders } from './app.routes';
                   DeleteTarifaComponent, EditTarifaComponent,
                   VehiculoComponent, NewVehiculoComponent,
                   DeleteVehiculoComponent, EditVehiculoComponent,
-                  PagoComponent ],
+                  PagoComponent, NewPagoComponent,
+                  DeletePagoComponent ],
   providers: [appRouterProviders],
   bootstrap: [ AppComponent ]
 })

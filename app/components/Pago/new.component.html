@@ -1,0 +1,29 @@
+<div *ngIf="bahias">
+    <div *ngIf="vehiculos">
+        <div class="container">
+            <h1>Nuevo pago</h1>
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <select name="bahia" class="form-control" [(ngModel)]="idBahia">
+                        <option *ngFor="let bahia of bahias" [value]="bahia.IdBahia">{{ bahia.IdBahia }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="vehiculo" class="form-control" [(ngModel)]="idVehiculo">
+                        <option *ngFor="let vehiculo of vehiculos" [value]="vehiculo.idVehiculo">{{ vehiculo.Marca }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="tiempo" [(ngModel)]="Tiempo" placeholder="Horas de estancia" (keyup)="onCalculate()">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="costo" [(ngModel)]="Costo" disabled="true">
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" name="fecha" [(ngModel)]="Fecha" placeholder="DD-MM-YYYY">
+                </div>
+                <button type="submit" class="btn btn-primary">Realizar pago</button>
+            </form>
+        </div>
+    </div>
+</div>

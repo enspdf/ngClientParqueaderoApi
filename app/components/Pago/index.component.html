@@ -11,7 +11,6 @@
                 <th>Tiempo</th>
                 <th>Costo</th>
                 <th>Fecha</th>
-                <th>Actualizar</th>
                 <th>Eliminar</th>
             </tr>
         </thead>
@@ -19,11 +18,10 @@
             <tr>
                 <th>{{ pago.IdPago }}</th>
                 <th>{{ pago.idBahia }}</th>
-                <th>{{ pago.idVehiculo }}</th>
-                <th>{{ pago.Tiempo }}</th>
-                <th>{{ pago.Costo }}</th>
-                <th>{{ pago.Fecha }}</th>
-                <th><a routerLink="/pagos/edit/{{ pago.IdPago }}" class="btn btn-info">Actualizar</a></th>
+                <th>{{ pago.Vehiculo.Marca }}</th>
+                <th>{{ pago.Tiempo }} Horas</th>
+                <th>$ {{ pago.Costo }}</th>
+                <th>{{ pago.Fecha | date: 'dd-MM-yyyy' }}</th>
                 <th><a routerLink="/pagos/delete/{{ pago.IdPago }}" class="btn btn-danger">Eliminar</a></th>
             </tr>
         </tbody>
