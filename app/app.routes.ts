@@ -24,6 +24,7 @@ import { VehiculoComponent } from './components/Vehiculo/index.component';
 import { NewVehiculoComponent } from './components/Vehiculo/new.component';
 import { DeleteVehiculoComponent } from './components/Vehiculo/delete.component';
 import { EditVehiculoComponent } from './components/Vehiculo/edit.component';
+import { PagoComponent } from './components/Pago/index.component';
 
 const routes : Routes = [
     {
@@ -153,6 +154,15 @@ const routes : Routes = [
             {
                 path: 'edit/:id',
                 component: EditVehiculoComponent
+            }
+        ]
+    }, 
+    {
+        path: 'pagos',
+        children: [
+            {
+                path: '',
+                component: PagoComponent
             }
         ]
     }

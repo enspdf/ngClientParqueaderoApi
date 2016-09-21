@@ -1,0 +1,31 @@
+<div *ngIf="pagos">
+    <hr>
+    <a routerLink="/pagos/new" class="btn btn-primary">Nuevo pago</a>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id Pago</th>
+                <th>Bahia</th>
+                <th>Vehiculo</th>
+                <th>Tiempo</th>
+                <th>Costo</th>
+                <th>Fecha</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let pago of pagos">
+            <tr>
+                <th>{{ pago.IdPago }}</th>
+                <th>{{ pago.idBahia }}</th>
+                <th>{{ pago.idVehiculo }}</th>
+                <th>{{ pago.Tiempo }}</th>
+                <th>{{ pago.Costo }}</th>
+                <th>{{ pago.Fecha }}</th>
+                <th><a routerLink="/pagos/edit/{{ pago.IdPago }}" class="btn btn-info">Actualizar</a></th>
+                <th><a routerLink="/pagos/delete/{{ pago.IdPago }}" class="btn btn-danger">Eliminar</a></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
