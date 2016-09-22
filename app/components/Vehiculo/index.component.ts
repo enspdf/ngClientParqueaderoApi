@@ -10,17 +10,17 @@ import { Vehiculo } from '../../Interfaces/Vehiculo.interface';
 })
 export class VehiculoComponent implements OnInit {
 
-    vehiculos : Vehiculo[];
+    vehiculos: Vehiculo[];
 
-    constructor(private _vehiculoService : VehiculoService) {
+    constructor(private _vehiculoService: VehiculoService) {
 
     }
 
     ngOnInit() {
-        this._vehiculoService.getVehiculos()
-            .subscribe(data => {
-                this.vehiculos = data;
-            })
+      this._vehiculoService.getVehiculos()
+        .subscribe(data => {
+          this.vehiculos = data;
+        });
     }
 
 }

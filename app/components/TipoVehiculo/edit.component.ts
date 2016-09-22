@@ -12,33 +12,33 @@ declare var swal: any;
     providers: [ TipoVehiculoService ]
 })
 export class EditTipoVehiculoComponent implements OnInit {
-    id : number;
-    tipoVehiculo : TipoVehiculo;
+    id: number;
+    tipoVehiculo: TipoVehiculo;
 
-    constructor(private _tipoVehiculoService : TipoVehiculoService, private _route : ActivatedRoute, private _router : Router) {
+    constructor(private _tipoVehiculoService: TipoVehiculoService, private _route: ActivatedRoute, private _router: Router) {
 
     }
 
     ngOnInit() {
-        this._route.params
-            .map(params => params['id'])
-            .subscribe((id) => {
-                this._tipoVehiculoService.getTipoVehiculoById(id)
-                    .subscribe(result => {
-                        this.tipoVehiculo = result;
-                    })
-            })
+      this._route.params
+        .map(params => params['id'])
+        .subscribe((id) => {
+          this._tipoVehiculoService.getTipoVehiculoById(id)
+            .subscribe(result => {
+              this.tipoVehiculo = result;
+            });
+        });
     }
 
     onSubmit() {
         if (this.tipoVehiculo.clase == null) {
             this.validatorMessage();
         } else {
-            this._tipoVehiculoService.updateTipoVehiculo(this.tipoVehiculo.idTipo, this.tipoVehiculo.clase)
-                .subscribe(data => {
-                    this.redirect();
-                    this.successUpdate();
-                })
+          this._tipoVehiculoService.updateTipoVehiculo(this.tipoVehiculo.idTipo, this.tipoVehiculo.clase)
+            .subscribe(data => {
+              this.redirect();
+              this.successUpdate();
+            });
         }
     }
 
@@ -47,10 +47,10 @@ export class EditTipoVehiculoComponent implements OnInit {
     }
 
     validatorMessage() {
-        swal("Oops...", "Todos los campos son necesarios", "error");
+        swal('Oops...', 'Todos los campos son necesarios', 'error');
     }
 
     successUpdate() {
-        swal("Actualizado", "El tipo vehiculo ha sido actualizado correctamente", "success");
+        swal('Actualizado', 'El tipo vehiculo ha sido actualizado correctamente', 'success');
     }
 }

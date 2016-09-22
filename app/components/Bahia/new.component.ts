@@ -14,20 +14,20 @@ declare var swal: any;
 })
 export class NewBahiaComponent implements OnInit {
 
-    idParqueadero : number;
-    Disponible : string;
-    parqueaderos : Parqueadero[];
-    result : string;
+    idParqueadero: number;
+    Disponible: string;
+    parqueaderos: Parqueadero[];
+    result: string;
 
-    constructor(private _bahiaService : BahiaService, private _parqueaderoService : ParqueaderoService, private _router : Router) {
+    constructor(private _bahiaService: BahiaService, private _parqueaderoService: ParqueaderoService, private _router: Router) {
 
     }
 
     ngOnInit() {
-        this._parqueaderoService.getParqueaderos()
-            .subscribe(result => {
-                this.parqueaderos = result;
-            })
+      this._parqueaderoService.getParqueaderos()
+        .subscribe(result => {
+          this.parqueaderos = result;
+        });
     }
 
     onSubmit() {
@@ -36,11 +36,11 @@ export class NewBahiaComponent implements OnInit {
         } else if (this.Disponible == null) {
             this.validatorMessage();
         } else {
-            this._bahiaService.saveBahia(this.idParqueadero, this.Disponible)
-                .subscribe(result => {
-                    this.result = result;
-                    this.redirect();
-            })
+          this._bahiaService.saveBahia(this.idParqueadero, this.Disponible)
+            .subscribe(result => {
+              this.result = result;
+              this.redirect();
+            });
         }
     }
 
@@ -50,10 +50,10 @@ export class NewBahiaComponent implements OnInit {
     }
 
     validatorMessage() {
-        swal("Oops...", "Todos los campos son necesarios", "error");
+        swal('Oops...', 'Todos los campos son necesarios', 'error');
     }
 
     successCreate() {
-        swal("Creado", "La bahia se ha creado correctamente", "success");
+        swal('Creado', 'La bahia se ha creado correctamente', 'success');
     }
 }

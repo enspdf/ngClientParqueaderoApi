@@ -4,9 +4,9 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class TipoVehiculoService {
-    private _tipoVehiculoUrl : string = "http://shackox.apphb.com/api/TipoVehiculos/";
+    private _tipoVehiculoUrl: string = 'http://shackox.apphb.com/api/TipoVehiculos/';
 
-    constructor(private _http : Http) {
+    constructor(private _http: Http) {
 
     }
 
@@ -15,29 +15,29 @@ export class TipoVehiculoService {
             .map(res => res.json());
     }
 
-    getTipoVehiculoById(idTipo : number) {
+    getTipoVehiculoById(idTipo: number) {
         return this._http.get(this._tipoVehiculoUrl + idTipo)
             .map(res => res.json());
     }
 
-    saveTipoVehiculo(clase : string) {
-        let body = JSON.stringify({"clase" : clase});
+    saveTipoVehiculo(clase: string) {
+        let body = JSON.stringify({'clase' : clase});
         let headers = new Headers({'Content-Type' : 'application/json'});
-        let options = new RequestOptions({headers : headers, method : "POST"});
+        let options = new RequestOptions({headers : headers, method : 'POST'});
 
-        return this._http.post(this._tipoVehiculoUrl, body, options) 
+        return this._http.post(this._tipoVehiculoUrl, body, options)
             .map(res => res.json());
     }
 
-    updateTipoVehiculo(idTipo : number, clase : string) {
-        let body = JSON.stringify({"idTipo" : idTipo, "clase" :  clase});
+    updateTipoVehiculo(idTipo: number, clase: string) {
+        let body = JSON.stringify({'idTipo' : idTipo, 'clase' :  clase});
         let headers = new Headers({'Content-Type' : 'application/json'});
-        let options = new RequestOptions({headers : headers, method: "PUT"});
+        let options = new RequestOptions({headers : headers, method: 'PUT'});
 
         return this._http.put(this._tipoVehiculoUrl + idTipo, body, options);
     }
 
-    deleteTipoVehiculo(idTipo : number) {
+    deleteTipoVehiculo(idTipo: number) {
         return this._http.delete(this._tipoVehiculoUrl + idTipo)
             .map(res => res.json());
     }

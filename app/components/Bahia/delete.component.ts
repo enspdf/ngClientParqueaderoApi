@@ -11,24 +11,23 @@ declare var swal: any;
     providers: [ BahiaService ]
 })
 export class DeleteBahiaComponent implements OnInit {
-    id : number;
-    result : string;    
+    id: number;
+    result: string;
 
-    constructor (private _bahiaService : BahiaService, private _route : ActivatedRoute, private _router : Router) {
+    constructor (private _bahiaService: BahiaService, private _route: ActivatedRoute, private _router: Router) {
 
     }
 
     ngOnInit() {
-        this._route.params
-            .map(params => params['id'])
-            .subscribe((id) => {
-                this._bahiaService.deleteBahia(id)
-                    .subscribe(result => {
-                        this.result = result;
-                        this.redirect();
-                    })
-                
-            })
+      this._route.params
+        .map(params => params['id'])
+        .subscribe((id) => {
+          this._bahiaService.deleteBahia(id)
+            .subscribe(result => {
+              this.result = result;
+              this.redirect();
+            });
+        });
     }
 
     redirect() {
@@ -37,6 +36,6 @@ export class DeleteBahiaComponent implements OnInit {
     }
 
     successDelete() {
-        swal("Eliminado", "La bahia se ha eliminado correctamente", "success");
+        swal('Eliminado', 'La bahia se ha eliminado correctamente', 'success');
     }
 }

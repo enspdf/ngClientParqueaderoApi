@@ -11,8 +11,8 @@ declare var swal: any;
 })
 export class IndexComponent implements OnInit {
 
-    date : Date;
-    year : string;
+    date: Date;
+    year: string;
 
     constructor() {
         this.date = new Date();
@@ -24,12 +24,12 @@ export class IndexComponent implements OnInit {
     }
 
     ngOnInit() {
-        swal({   
-            title: "Bienvenido",   
-            text: "Gracias por preferir nuestros servicios",   
-            imageUrl: "http://www.funlam.edu.co/uploads/sedebogota/logoFunlam.png",
-            timer: 3000,   
-            showConfirmButton: false 
+        swal({
+            title: 'Bienvenido',
+            text: 'Gracias por preferir nuestros servicios',
+            imageUrl: 'http://www.funlam.edu.co/uploads/sedebogota/logoFunlam.png',
+            timer: 3000,
+            showConfirmButton: false
         });
     }
 

@@ -12,7 +12,7 @@ import { PersonaComponent } from './components/Cliente/index.component';
 import { NewClienteComponent } from './components/Cliente/new.component';
 import { DeleteClienteComponent } from './components/Cliente/delete.component';
 import { EditClienteComponent } from './components/Cliente/edit.component';
-import { TipoVehiculoComponent } from './components/TipoVehiculo/index.component'
+import { TipoVehiculoComponent } from './components/TipoVehiculo/index.component';
 import { NewTipoVehiculoComponent } from './components/TipoVehiculo/new.component';
 import { DeleteTipoVehiculoComponent } from './components/TipoVehiculo/delete.component';
 import { EditTipoVehiculoComponent } from './components/TipoVehiculo/edit.component';
@@ -28,9 +28,9 @@ import { PagoComponent } from './components/Pago/index.component';
 import { NewPagoComponent } from './components/Pago/new.component';
 import { DeletePagoComponent } from './components/Pago/delete.component';
 
-const routes : Routes = [
+const routes: Routes = [
     {
-        path: '', 
+        path: '',
         component: IndexComponent
     },
     {
@@ -43,7 +43,7 @@ const routes : Routes = [
             {
                 path: 'new',
                 component: NewParqueaderoComponent
-            },  
+            },
             {
             path: 'delete/:id',
                 component: DeleteParqueaderoComponent
@@ -53,7 +53,7 @@ const routes : Routes = [
                 component: EditParqueaderoComponent
             }
         ]
-    },    
+    },
     {
         path: 'bahias',
         children: [
@@ -158,7 +158,7 @@ const routes : Routes = [
                 component: EditVehiculoComponent
             }
         ]
-    }, 
+    },
     {
         path: 'pagos',
         children: [
@@ -178,7 +178,7 @@ const routes : Routes = [
     }
 ];
 
-export const appRouterProviders : any[] = [
+export const appRouterProviders: any[] = [
 
 ];
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VehiculoService } from '../../services/Vehiculo.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
-declare var swal : any;
+declare var swal: any;
 
 @Component({
     moduleId: module.id,
@@ -11,23 +11,23 @@ declare var swal : any;
     providers: [ VehiculoService ]
 })
 export class DeleteVehiculoComponent implements OnInit {
-    id : number;
-    result : string;
+    id: number;
+    result: string;
 
-    constructor(private _vehiculoService : VehiculoService, private _route : ActivatedRoute, private _router : Router) {
+    constructor(private _vehiculoService: VehiculoService, private _route: ActivatedRoute, private _router: Router) {
 
     }
 
     ngOnInit() {
-        this._route.params
-            .map(params => params['id'])
-            .subscribe((id) => {
-                this._vehiculoService.deleteVehiculo(id)
-                    .subscribe(result => {
-                        this.result = result;
-                        this.redirect();
-                    })
-            })
+      this._route.params
+        .map(params => params['id'])
+        .subscribe((id) => {
+          this._vehiculoService.deleteVehiculo(id)
+            .subscribe(result => {
+              this.result = result;
+              this.redirect();
+            });
+        });
     }
 
     redirect() {
@@ -36,6 +36,6 @@ export class DeleteVehiculoComponent implements OnInit {
     }
 
     successDelete() {
-        swal("Eliminado", "El vehiculo se ha eliminado correctamente", "success");
+        swal('Eliminado', 'El vehiculo se ha eliminado correctamente', 'success');
     }
 }

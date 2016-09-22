@@ -11,23 +11,23 @@ declare var swal: any;
     providers: [ TarifaService ]
 })
 export class DeleteTarifaComponent implements OnInit {
-    id : number;
-    result : string;
+    id: number;
+    result: string;
 
-    constructor(private _tarifaService : TarifaService, private _route : ActivatedRoute, private _router : Router) {
+    constructor(private _tarifaService: TarifaService, private _route: ActivatedRoute, private _router: Router) {
 
     }
 
     ngOnInit() {
-        this._route.params
-            .map(params => params['id'])
-            .subscribe((id) => {
-                this._tarifaService.deleteTarifa(id)
-                    .subscribe(result => {
-                        this.result = result;
-                        this.redirect();
-                    })
-            })
+      this._route.params
+        .map(params => params['id'])
+        .subscribe((id) => {
+          this._tarifaService.deleteTarifa(id)
+            .subscribe(result => {
+              this.result = result;
+              this.redirect();
+            });
+        });
     }
 
     redirect() {
@@ -36,6 +36,6 @@ export class DeleteTarifaComponent implements OnInit {
     }
 
     successDelete() {
-        swal("Eliminado", "La tarifa se ha eliminado correctamente", "success");
+        swal('Eliminado', 'La tarifa se ha eliminado correctamente', 'success');
     }
 }

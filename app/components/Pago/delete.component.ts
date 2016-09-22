@@ -11,10 +11,10 @@ declare var swal: any;
     providers: [ PagoService ]
 })
 export class DeletePagoComponent implements OnInit {
-    id : number;
-    result : string;
+    id: number;
+    result: string;
 
-    constructor(private _pagoService : PagoService, private _route : ActivatedRoute, private _router : Router) {
+    constructor(private _pagoService: PagoService, private _route: ActivatedRoute, private _router: Router) {
 
     }
 
@@ -26,8 +26,8 @@ export class DeletePagoComponent implements OnInit {
                     .subscribe(result => {
                         this.result = result;
                         this.redirect();
-                    })
-            })
+                    });
+            });
     }
 
     redirect() {
@@ -36,6 +36,6 @@ export class DeletePagoComponent implements OnInit {
     }
 
     successDelete() {
-        swal("Eliminado", "El pago se ha eliminado correctamente", "success");
+        swal('Eliminado', 'El pago se ha eliminado correctamente', 'success');
     }
 }

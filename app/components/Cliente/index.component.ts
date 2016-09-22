@@ -10,17 +10,17 @@ import { Persona } from '../../Interfaces/Persona.interface';
 })
 export class PersonaComponent implements OnInit {
 
-    personas : Persona[];
+    personas: Persona[];
 
-    constructor(private _clienteService : ClienteService) {
+    constructor(private _clienteService: ClienteService) {
 
     }
 
     ngOnInit() {
-        this._clienteService.getPersonas()
-            .subscribe(data => {
-                this.personas = data;
-            })
+      this._clienteService.getPersonas()
+        .subscribe(data => {
+          this.personas = data;
+        });
     }
 
 }

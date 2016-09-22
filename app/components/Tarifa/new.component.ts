@@ -4,7 +4,7 @@ import { TarifaService } from '../../services/Tarifa.service';
 import { TipoVehiculoService } from '../../services/TipoVehiculo.service';
 import { TipoVehiculo } from '../../Interfaces/TipoVehiculo.interface';
 
-declare var swal : any;
+declare var swal: any;
 
 @Component({
     moduleId: module.id,
@@ -14,33 +14,33 @@ declare var swal : any;
 })
 export class NewTarifaService implements OnInit {
 
-    idTipo : number;
-    costo : number;
-    tipoVehiculos : TipoVehiculo[];
-    result : string;
+    idTipo: number;
+    costo: number;
+    tipoVehiculos: TipoVehiculo[];
+    result: string;
 
-    constructor(private _tarifaService : TarifaService, private _tipoVehiculoService : TipoVehiculoService, private _router : Router) {
+    constructor(private _tarifaService: TarifaService, private _tipoVehiculoService: TipoVehiculoService, private _router: Router) {
 
     }
 
     ngOnInit() {
-        this._tipoVehiculoService.getTiposVehiculo()
-            .subscribe(result => {
-                this.tipoVehiculos = result;
-            })
+      this._tipoVehiculoService.getTiposVehiculo()
+        .subscribe(result => {
+          this.tipoVehiculos = result;
+        });
     }
 
     onSubmit() {
         if (this.idTipo == null) {
             this.validatorMessage();
-        } else if(this.costo == null) {
+        } else if (this.costo == null) {
             this.validatorMessage();
         } else {
-            this._tarifaService.saveTarifa(this.idTipo, this.costo)
-                .subscribe(result => {
-                    this.result = result;
-                    this.redirect();
-                })
+          this._tarifaService.saveTarifa(this.idTipo, this.costo)
+            .subscribe(result => {
+              this.result = result;
+              this.redirect();
+            });
         }
     }
 
@@ -50,11 +50,11 @@ export class NewTarifaService implements OnInit {
     }
 
     validatorMessage() {
-        swal("Oops...", "Todos los campos son necesarios", "error");
+        swal('Oops...', 'Todos los campos son necesarios', 'error');
     }
 
     successCreate() {
-        swal("Creado", "La tarifa se ha creado correctamente", "success");
+        swal('Creado', 'La tarifa se ha creado correctamente', 'success');
     }
 
 }

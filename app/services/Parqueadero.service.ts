@@ -4,9 +4,9 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ParqueaderoService {
-    private _parqueaderoUrl : string = 'http://shackox.apphb.com/api/Parqueaderos/';
+    private _parqueaderoUrl: string = 'http://shackox.apphb.com/api/Parqueaderos/';
 
-    constructor(private _http : Http) {
+    constructor(private _http: Http) {
 
     }
 
@@ -15,29 +15,29 @@ export class ParqueaderoService {
             .map(res => res.json());
     }
 
-    getParqueaderoById(IdParqueadero : number) {
+    getParqueaderoById(IdParqueadero: number) {
         return this._http.get(this._parqueaderoUrl + IdParqueadero)
             .map(res => res.json());
     }
 
-    saveParqueadero(nombre : string) {
-        let body = JSON.stringify({"nombre" : nombre});
+    saveParqueadero(nombre: string) {
+        let body = JSON.stringify({'nombre': nombre});
         let headers = new Headers({'Content-Type' : 'application/json'});
-        let options = new RequestOptions({headers: headers, method: "POST"});
+        let options = new RequestOptions({headers: headers, method: 'POST'});
 
         return this._http.post(this._parqueaderoUrl, body, options)
             .map(res => res.json());
     }
 
-    updateParqueadero(IdParqueadero : number, nombre : string) {
-        let body = JSON.stringify({"IdParqueadero" : IdParqueadero, "nombre" : nombre});
-        let headers = new Headers({'Content-Type' : 'application/json'});
-        let options = new RequestOptions({headers: headers, method: "PUT"});
+    updateParqueadero(IdParqueadero: number, nombre: string) {
+        let body = JSON.stringify({'IdParqueadero': IdParqueadero, 'nombre': nombre});
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: headers, method: 'PUT'});
 
         return this._http.put(this._parqueaderoUrl + IdParqueadero, body, options);
     }
 
-    deleteParqueadero(IdParqueadero : number) {
+    deleteParqueadero(IdParqueadero: number) {
         return this._http.delete(this._parqueaderoUrl + IdParqueadero)
             .map(res => res.json());
     }

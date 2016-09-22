@@ -12,11 +12,11 @@ declare var swal: any;
 })
 export class NewClienteComponent {
 
-    nombres : string;
-    apellidos : string;
-    result : string;
+    nombres: string;
+    apellidos: string;
+    result: string;
 
-    constructor(private _clienteService : ClienteService, private _router : Router) {
+    constructor(private _clienteService: ClienteService, private _router: Router) {
 
     }
 
@@ -26,11 +26,11 @@ export class NewClienteComponent {
         } else if (this.apellidos == null) {
             this.validatorMessage();
         } else {
-            this._clienteService.savePersona(this.nombres, this.apellidos)
-                .subscribe(result => {
-                    this.result = result;
-                    this.redirect();
-                })
+          this._clienteService.savePersona(this.nombres, this.apellidos)
+            .subscribe(result => {
+              this.result = result;
+              this.redirect();
+            });
         }
     }
 
@@ -40,10 +40,10 @@ export class NewClienteComponent {
     }
 
     validatorMessage() {
-        swal("Oops...", "Todos los campos son necesarios", "error");
+        swal('Oops...', 'Todos los campos son necesarios', 'error');
     }
 
-    successCreate(nombres : string, apellidos : string) {
-        swal("Bienvenido", nombres + " " + apellidos + " te has registrado correctamente", "success");
+    successCreate(nombres: string, apellidos: string) {
+        swal('Bienvenido', nombres + ' ' + apellidos + ' te has registrado correctamente', 'success');
     }
 }

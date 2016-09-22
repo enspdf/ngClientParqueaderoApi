@@ -1,4 +1,4 @@
 export class Parqueadero {
-    IdParqueadero : number;
-    nombre : string;
+    IdParqueadero: number;
+    nombre: string;
 }

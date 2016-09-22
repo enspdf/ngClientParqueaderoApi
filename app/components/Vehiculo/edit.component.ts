@@ -7,7 +7,7 @@ import { Vehiculo } from '../../Interfaces/Vehiculo.interface';
 import { Persona } from '../../Interfaces/Persona.interface';
 import { TipoVehiculo } from '../../Interfaces/TipoVehiculo.interface';
 
-declare var swal : any;
+declare var swal: any;
 
 @Component({
     moduleId: module.id,
@@ -16,46 +16,47 @@ declare var swal : any;
     providers: [ VehiculoService, ClienteService, TipoVehiculoService ]
 })
 export class EditVehiculoComponent implements OnInit {
-    id : number;
-    vehiculo : Vehiculo;
-    clientes : Persona[];
-    tipoVehiculos : TipoVehiculo[];
+    id: number;
+    vehiculo: Vehiculo;
+    clientes: Persona[];
+    tipoVehiculos: TipoVehiculo[];
 
-    constructor(private _vehiculoService : VehiculoService, private _clienteService : ClienteService, private _tipoVehiculoService : TipoVehiculoService, private _route : ActivatedRoute, private _router : Router) {
+    constructor(private _vehiculoService: VehiculoService, private _clienteService: ClienteService,
+      private _tipoVehiculoService: TipoVehiculoService, private _route: ActivatedRoute, private _router: Router) {
 
     }
 
     ngOnInit() {
-        this._route.params
-            .map(params => params['id'])
-            .subscribe((id) => {
-                this._vehiculoService.getVehiculoById(id)
-                    .subscribe(result => {
-                        this.vehiculo = result;
-                    })
-            })
+      this._route.params
+        .map(params => params['id'])
+        .subscribe((id) => {
+          this._vehiculoService.getVehiculoById(id)
+            .subscribe(result => {
+              this.vehiculo = result;
+            });
+        });
         this._clienteService.getPersonas()
-            .subscribe(result => {
-                this.clientes = result;
-            })
-        this._tipoVehiculoService.getTiposVehiculo() 
-            .subscribe(result => {
-                this.tipoVehiculos = result;
-            })
+          .subscribe(result => {
+            this.clientes = result;
+          });
+        this._tipoVehiculoService.getTiposVehiculo()
+          .subscribe(result => {
+            this.tipoVehiculos = result;
+          });
     }
 
     onSubmit() {
         if (this.vehiculo.Marca == null) {
             this.validatorMessage();
-        } else if(this.vehiculo.IdPersona == null) {
+        } else if (this.vehiculo.IdPersona == null) {
             this.validatorMessage();
-        } else if(this.vehiculo.idTipo == null) {
+        } else if (this.vehiculo.idTipo == null) {
             this.validatorMessage();
         } else {
-            this._vehiculoService.updateVehiculo(this.vehiculo.idVehiculo, this.vehiculo.Marca, this.vehiculo.IdPersona, this.vehiculo.idTipo)
-                .subscribe(data => {
-                    this.redirect();
-                })
+          this._vehiculoService.updateVehiculo(this.vehiculo.idVehiculo, this.vehiculo.Marca, this.vehiculo.IdPersona, this.vehiculo.idTipo)
+            .subscribe(data => {
+              this.redirect();
+            });
         }
     }
 
@@ -65,10 +66,10 @@ export class EditVehiculoComponent implements OnInit {
     }
 
     validatorMessage() {
-        swal("Oops...", "Todos los campos son necesarios", "erro");
+        swal('Oops...', 'Todos los campos son necesarios', 'erro');
     }
 
     successUpdate() {
-        swal("Actualizado", "El vehiculo ha sido actualizado correctamente", "success");
+        swal('Actualizado', 'El vehiculo ha sido actualizado correctamente', 'success');
     }
 }

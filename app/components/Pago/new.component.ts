@@ -4,14 +4,13 @@ import { PagoService } from '../../services/Pago.service';
 import { BahiaService } from '../../services/Bahia.service';
 import { VehiculoService } from '../../services/Vehiculo.service';
 import { TipoVehiculoService } from '../../services/TipoVehiculo.service';
-import { TarifaService } from '../../services/Tarifa.service'; 
-import { Pago } from '../../Interfaces/Pago.interface';
+import { TarifaService } from '../../services/Tarifa.service';
 import { Bahia } from '../../Interfaces/Bahia.interface';
 import { Vehiculo } from '../../Interfaces/Vehiculo.interface';
 import { TipoVehiculo } from '../../Interfaces/TipoVehiculo.interface';
 import { Tarifa } from '../../Interfaces/Tarifa.interface';
 
-declare var swal : any;
+declare var swal: any;
 
 @Component({
     moduleId: module.id,
@@ -21,32 +20,34 @@ declare var swal : any;
 })
 export class NewPagoComponent implements OnInit {
 
-    idBahia :  number;
-    idVehiculo : number;
-    Tiempo : string;
-    Costo : number;
-    Fecha : Date;
-    bahias : Bahia[];
-    vehiculos : Vehiculo[];
-    vehiculoSelected : Vehiculo;
-    tarifaVehiculoSelected : TipoVehiculo;
-    totalTarifaVehiculo : Tarifa;
-    tarifa : number = 2000;
-    result : string;
+    idBahia:  number;
+    idVehiculo: number;
+    Tiempo: string;
+    Costo: number;
+    Fecha: Date;
+    bahias: Bahia[];
+    vehiculos: Vehiculo[];
+    vehiculoSelected: Vehiculo;
+    tarifaVehiculoSelected: TipoVehiculo;
+    totalTarifaVehiculo: Tarifa;
+    tarifa: number = 2000;
+    result: string;
 
-    constructor(private _tarifaService : TarifaService, private _tipoVehiculoService : TipoVehiculoService, private _pagoService : PagoService, private _bahiaService : BahiaService, private _vehiculoService : VehiculoService, private _router : Router) {
+    constructor(private _tarifaService: TarifaService, private _tipoVehiculoService: TipoVehiculoService,
+      private _pagoService: PagoService, private _bahiaService: BahiaService,
+      private _vehiculoService: VehiculoService, private _router: Router) {
 
     }
 
     ngOnInit() {
-        this._bahiaService.getBahias()
-            .subscribe(result => {
-                this.bahias = result;
-            })
+      this._bahiaService.getBahias()
+        .subscribe(result => {
+          this.bahias = result;
+        });
         this._vehiculoService.getVehiculos()
-            .subscribe(result => {
-                this.vehiculos = result;
-            })
+          .subscribe(result => {
+            this.vehiculos = result;
+          });
     }
 
     onSubmit() {
@@ -61,22 +62,21 @@ export class NewPagoComponent implements OnInit {
         } else if (this.Fecha == null) {
             this.validatorMessage();
         } else {
-            this._pagoService.savePago(this.idBahia, this.idVehiculo, this.Tiempo, this.Costo, this.Fecha)
-                .subscribe(result => {
-                    this.result = result;
-                    this.redirect();
-                })
+          this._pagoService.savePago(this.idBahia, this.idVehiculo, this.Tiempo, this.Costo, this.Fecha)
+            .subscribe(result => {
+              this.result = result;
+              this.redirect();
+            });
         }
     }
 
     onCalculate() {
         if (this.Tiempo == null) {
-            swal("Oops...", "Debes ingresar las horas de estancia", "error");
+            swal('Oops...', 'Debes ingresar las horas de estancia', 'error');
         } else if (this.idVehiculo == null) {
-            swal("Oops...", "Debes de seleccionar un vehiculo", "error");
+            swal('Oops...', 'Debes de seleccionar un vehiculo', 'error');
         } else {
             this.Costo = this.tarifa * +this.Tiempo;
-            console.log(this.Costo);
             /* this._vehiculoService.getVehiculoById(this.idVehiculo)
                 .subscribe(result => {
                     this.vehiculoSelected = result;
@@ -88,9 +88,8 @@ export class NewPagoComponent implements OnInit {
                                 this.totalTarifaVehiculo = result;
                                 console.log(this.totalTarifaVehiculo.Costo);
                             })
-                        }) 
+                        })
                 }) */
-            
         }
     }
 
@@ -100,10 +99,10 @@ export class NewPagoComponent implements OnInit {
     }
 
     validatorMessage() {
-        swal("Oops...", "Todos los campos son necesarios", "error");
+        swal('Oops...', 'Todos los campos son necesarios', 'error');
     }
 
     successCreate() {
-        swal("Pagado", "El pago se ha realizado correctamente", "success");
+        swal('Pagado', 'El pago se ha realizado correctamente', 'success');
     }
 }

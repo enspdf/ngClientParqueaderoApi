@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TipoVehiculoService } from '../../services/TipoVehiculo.service';
 
-declare var swal : any;
+declare var swal: any;
 
 @Component({
     moduleId: module.id,
@@ -12,10 +12,10 @@ declare var swal : any;
 })
 export class NewTipoVehiculoComponent {
 
-    clase : string;
-    result : string;
+    clase: string;
+    result: string;
 
-    constructor(private _tipoVehiculoService : TipoVehiculoService, private _router : Router) {
+    constructor(private _tipoVehiculoService: TipoVehiculoService, private _router: Router) {
 
     }
 
@@ -23,11 +23,11 @@ export class NewTipoVehiculoComponent {
         if (this.clase == null) {
             this.validatorMessage();
         } else {
-            this._tipoVehiculoService.saveTipoVehiculo(this.clase)
-                .subscribe(result => {
-                    this.result = result;
-                    this.redirect();
-                })
+          this._tipoVehiculoService.saveTipoVehiculo(this.clase)
+            .subscribe(result => {
+              this.result = result;
+              this.redirect();
+            });
         }
     }
 
@@ -37,10 +37,10 @@ export class NewTipoVehiculoComponent {
     }
 
     validatorMessage() {
-        swal("Oops...", "Todos los campos son necesarios", "error");
+        swal('Oops...', 'Todos los campos son necesarios', 'error');
     }
 
     successCreate() {
-        swal("Creado", "La clase " + this.clase + " se ha creado correctamente", "success");
+        swal('Creado', 'La clase ' + this.clase + ' se ha creado correctamente', 'success');
     }
 }

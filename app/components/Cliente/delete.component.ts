@@ -11,23 +11,23 @@ declare var swal: any;
     providers: [ ClienteService ]
 })
 export class DeleteClienteComponent implements OnInit {
-    id : number;
-    result : string;
+    id: number;
+    result: string;
 
-    constructor(private _clienteService : ClienteService, private _route : ActivatedRoute, private _router : Router) {
+    constructor(private _clienteService: ClienteService, private _route: ActivatedRoute, private _router: Router) {
 
     }
 
     ngOnInit() {
-        this._route.params 
-            .map(params => params['id'])
-            .subscribe((id) => {
-                this._clienteService.deletePersona(id)
-                    .subscribe(result => {
-                        this.result = result;
-                        this.redirect();
-                    })
-            })
+      this._route.params
+        .map(params => params['id'])
+        .subscribe((id) => {
+          this._clienteService.deletePersona(id)
+            .subscribe(result => {
+              this.result = result;
+              this.redirect();
+            });
+        });
     }
 
     redirect() {
@@ -36,6 +36,6 @@ export class DeleteClienteComponent implements OnInit {
     }
 
     successDelete() {
-        swal("Eliminado", "El usuario se ha eliminado correctamente", "success");
+        swal('Eliminado', 'El usuario se ha eliminado correctamente', 'success');
     }
 }

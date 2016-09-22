@@ -10,17 +10,17 @@ import { Bahia } from '../../Interfaces/Bahia.interface';
 })
 export class BahiaComponent implements OnInit {
 
-    bahias : Bahia[];
+    bahias: Bahia[];
 
-    constructor(private _bahiaService : BahiaService) {
+    constructor(private _bahiaService: BahiaService) {
 
     }
 
     ngOnInit() {
-        this._bahiaService.getBahias()
-            .subscribe(data => {
-                this.bahias = data; 
-            })
+      this._bahiaService.getBahias()
+        .subscribe(data => {
+          this.bahias = data;
+        });
     }
 
 }

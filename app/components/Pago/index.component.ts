@@ -10,16 +10,16 @@ import { Pago } from '../../Interfaces/Pago.interface';
 })
 export class PagoComponent implements OnInit {
 
-    pagos : Pago[];
+    pagos: Pago[];
 
-    constructor(private _pagoService : PagoService) {
+    constructor(private _pagoService: PagoService) {
 
     }
 
     ngOnInit() {
-        this._pagoService.getPagos()
-            .subscribe(data => {
-                this.pagos = data;  
-            })
+      this._pagoService.getPagos()
+        .subscribe(data => {
+          this.pagos = data;
+        });
     }
 }

@@ -11,23 +11,23 @@ declare var swal: any;
     providers: [ TipoVehiculoService ]
 })
 export class DeleteTipoVehiculoComponent implements OnInit {
-    id : number;
-    result : string;
+    id: number;
+    result: string;
 
-    constructor(private _tipoVehiculoService : TipoVehiculoService, private _route : ActivatedRoute, private _router : Router) {
+    constructor(private _tipoVehiculoService: TipoVehiculoService, private _route: ActivatedRoute, private _router: Router) {
 
     }
 
     ngOnInit() {
-        this._route.params
-            .map(params => params['id'])
-            .subscribe((id) => {
-                this._tipoVehiculoService.deleteTipoVehiculo(id)
-                    .subscribe(result => {
-                        this.result = result;
-                        this.redirect();
-                    })
-            })
+      this._route.params
+        .map(params => params['id'])
+        .subscribe((id) => {
+          this._tipoVehiculoService.deleteTipoVehiculo(id)
+            .subscribe(result => {
+              this.result = result;
+              this.redirect();
+            });
+        });
     }
 
     redirect() {
@@ -36,6 +36,6 @@ export class DeleteTipoVehiculoComponent implements OnInit {
     }
 
     successDelete() {
-        swal("Eliminado", "El tipo de vehiculo se ha eliminado correctamente", "success");
+        swal('Eliminado', 'El tipo de vehiculo se ha eliminado correctamente', 'success');
     }
 }

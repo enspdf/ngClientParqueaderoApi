@@ -1,6 +1,6 @@
 export class Bahia {
-    parqueadero : any;
-    IdBahia : number;
-    idParqueadero : number;
-    Disponible : string;
+    parqueadero: any;
+    IdBahia: number;
+    idParqueadero: number;
+    Disponible: string;
 }

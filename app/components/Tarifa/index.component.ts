@@ -10,16 +10,16 @@ import { Tarifa } from '../../Interfaces/Tarifa.interface';
 })
 export class TarifaComponent implements OnInit {
 
-    tarifas : Tarifa[];
+    tarifas: Tarifa[];
 
-    constructor(private _tarifaService : TarifaService) {
+    constructor(private _tarifaService: TarifaService) {
 
     }
 
     ngOnInit() {
-        this._tarifaService.getTarifas()
-            .subscribe(data => {
-                this.tarifas = data;
-            })
+      this._tarifaService.getTarifas()
+        .subscribe(data => {
+          this.tarifas = data;
+        });
     }
 }

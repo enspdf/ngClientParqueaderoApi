@@ -1,5 +1,5 @@
 export class Tarifa {
-    idTarifa : number;
-    idTipo : number;
-    Costo : number;
+    idTarifa: number;
+    idTipo: number;
+    Costo: number;
 }

@@ -1,6 +1,6 @@
 export class Vehiculo {
-    idVehiculo : number;
-    Marca : string;
-    IdPersona : number;
-    idTipo : number;
+    idVehiculo: number;
+    Marca: string;
+    IdPersona: number;
+    idTipo: number;
 }

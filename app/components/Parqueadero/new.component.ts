@@ -11,10 +11,10 @@ declare var swal: any;
     providers: [ParqueaderoService]
 })
 export class NewParqueaderoComponent {
-    nombre : string;
-    result : string;
+    nombre: string;
+    result: string;
 
-    constructor(private _parqueaderoService : ParqueaderoService, private _router : Router) {
+    constructor(private _parqueaderoService: ParqueaderoService, private _router: Router) {
 
     }
 
@@ -31,7 +31,7 @@ export class NewParqueaderoComponent {
         this.successParking(this.nombre);
     }
 
-    successParking(name : string) {
-        swal("Creado", "El parqueadero " + name + " se ha guardado correctamente", "success");
+    successParking(name: string) {
+        swal('Creado', 'El parqueadero ' + name + ' se ha guardado correctamente', 'success');
     }
 }

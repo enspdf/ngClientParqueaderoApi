@@ -9,17 +9,17 @@ import { Parqueadero } from '../../Interfaces/Parqueadero.interface';
     providers: [ParqueaderoService]
 })
 export class ParqueaderoComponent implements OnInit {
-    IdParqueadero : number;
-    parqueaderos : Parqueadero[];
+    IdParqueadero: number;
+    parqueaderos: Parqueadero[];
 
-    constructor(private _parqueaderoService : ParqueaderoService) {
+    constructor(private _parqueaderoService: ParqueaderoService) {
 
     }
 
     ngOnInit() {
-        this._parqueaderoService.getParqueaderos()
-            .subscribe(data => {
-                this.parqueaderos = data;
-            })
-    }   
+      this._parqueaderoService.getParqueaderos()
+        .subscribe(data => {
+          this.parqueaderos = data;
+        });
+    }
 }

@@ -10,16 +10,16 @@ import { TipoVehiculo } from '../../Interfaces/TipoVehiculo.interface';
 })
 export class TipoVehiculoComponent implements OnInit {
 
-    tipoVehiculos : TipoVehiculo[];
+    tipoVehiculos: TipoVehiculo[];
 
-    constructor(private _tipoVehiculoService : TipoVehiculoService) {
+    constructor(private _tipoVehiculoService: TipoVehiculoService) {
 
     }
 
     ngOnInit() {
-        this._tipoVehiculoService.getTiposVehiculo()
-            .subscribe(data => {
-                this.tipoVehiculos = data;
-            })
+      this._tipoVehiculoService.getTiposVehiculo()
+        .subscribe(data => {
+          this.tipoVehiculos = data;
+        });
     }
 }
