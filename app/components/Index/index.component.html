@@ -1,43 +1,62 @@
 <div class="container text-center">
-
     <div class="col-md-12">
-        <div class="col-md-4">
+        <div class="col-md-6">
+            <hr>
             <div class="panel panel-default">
+                <div class="panel-heading">
+                    Fecha actual
+                </div>
                 <div class="panel-body">
                     <h2>{{ year }}</h2>
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="col-md-6">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h3>Disponible</h3>
-                    </div>
-                    <div class="panel-body">
-                        <h2>100</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-danger">
-                    <div class="panel-heading">
-                        <h3>Ocupado</h3>
-                    </div>
-                    <div class="panel-body">
-                        <h2>100</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12">
-        <div class="col-md-4">
+        <div class="col-md-6">
+            <hr>
             <div class="panel panel-default">
+                <div class="panel-heading">
+                    Hora
+                </div>
                 <div class="panel-body">
                     <h2>{{ date | date: 'h:mm:ss' }}</h2>
                 </div>
             </div>
         </div>
     </div>
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <hr>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Registrar tu vehiculo
+                </div>
+                <div class="panel-body">
+                    <a routerLink="/vehiculos/new" class="btn btn-primary">Registrar vehiculo</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <hr>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    ¿Aún no has reservado tu parqueadero?
+                </div>
+                <div class="panel-body">
+                    <a routerLink="/pagos/new" class="btn btn-primary">Reservar y pagar parqueadero</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <hr>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    Registrarse para obtener todos los beneficios del parqueadero
+                </div>
+                <div class="panel-body">
+                    <a routerLink="/clientes/new" class="btn btn-primary">Registrarte</a>
+                </div>
+            </div>
+    </div>
+    <hr>
 </div>

@@ -31,6 +31,7 @@ import { EditVehiculoComponent } from '../app/components/Vehiculo/edit.component
 import { PagoComponent } from '../app/components/Pago/index.component';
 import { NewPagoComponent } from '../app/components/Pago/new.component';
 import { DeletePagoComponent } from '../app/components/Pago/delete.component';
+import { InformacionComponent } from '../app/components/Informacion/index.component';
 import { routing, appRouterProviders } from './app.routes';
 
 @NgModule({
@@ -49,7 +50,7 @@ import { routing, appRouterProviders } from './app.routes';
                   VehiculoComponent, NewVehiculoComponent,
                   DeleteVehiculoComponent, EditVehiculoComponent,
                   PagoComponent, NewPagoComponent,
-                  DeletePagoComponent ],
+                  DeletePagoComponent, InformacionComponent ],
   providers: [appRouterProviders],
   bootstrap: [ AppComponent ]
 })

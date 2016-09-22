@@ -8,33 +8,18 @@
         "height": 100,
         "tabs": [
           {
-            "id": "42dec2e0-a833-423e-8236-47139a782e80",
-            "relativeUrl": "file://.alm/sessionsV2.json",
-            "additionalData": null
-          },
-          {
-            "id": "0911accc-1eb9-460d-986f-3b95b01e54a6",
-            "relativeUrl": "file://./app/app.component.js",
-            "additionalData": null
-          },
-          {
-            "id": "2469cd4a-4e95-4c16-9313-e51a1fc7425d",
-            "relativeUrl": "file://./app/app.routes.ts",
-            "additionalData": null
-          },
-          {
-            "id": "42a66072-0865-41f6-bc0d-ac3f04a2716d",
-            "relativeUrl": "file://./app/app.routes.js",
+            "id": "ca1bce0b-ea54-4d87-bcba-ede89c1e505a",
+            "relativeUrl": "file://./app/components/Informacion/index.component.ts",
             "additionalData": null
           }
         ],
         "subItems": [],
         "activeItemIndex": 0
       },
-      "lastUsed": 1474512451407,
-      "errorsExpanded": false,
+      "lastUsed": 1474571614751,
+      "errorsExpanded": true,
       "errorsDisplayMode": 1,
-      "selectedTabId": "42a66072-0865-41f6-bc0d-ac3f04a2716d",
+      "selectedTabId": "ca1bce0b-ea54-4d87-bcba-ede89c1e505a",
       "fileTreeExpanded": true
     }
   ],
